@@ -1,9 +1,15 @@
-python 2.7.7
+How to install
 
-install pip https://pip.pypa.io/en/latest/installing.html
+Running on Python 2.7.7
+https://www.python.org/download/releases/2.7.7/
 
-pip install requests 
-http://docs.python-requests.org/en/latest/user/install/#install
+Install pip (https://pip.pypa.io/en/latest/installing.html)
 
-pip install nose
-http://nose.readthedocs.org/en/latest/
+```> python get-pip.py```
+
+Install requests via pip (http://docs.python-requests.org/en/latest/user/install/#install)
+
+```> pip install requests```
+
+Install nose (http://nose.readthedocs.org/en/latest/)
+```> pip install nose```
