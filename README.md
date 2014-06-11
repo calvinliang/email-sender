@@ -10,7 +10,7 @@
 
 ```> pip install requests```
 
-* Install nose via nose (http://nose.readthedocs.org/en/latest/)
+* Install nose via pip (http://nose.readthedocs.org/en/latest/)
 
 ```> pip install nose```
 
