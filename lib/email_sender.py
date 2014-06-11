@@ -31,16 +31,16 @@ def retrieve_email_provider():
     # Standardize the provider in case the config is different
     try:
         config = ConfigParser.ConfigParser()
-        config.read('config/email_config.ini')
+        config.read('../config/email_config.ini')
         return config.get('Provider', 'provider').lower()
     except:
         return False
 
 def validate_inputs(d):
     # Validate the fields to make sure they are all there
-    if validate_email(d.get('to')) and \
+    if validate_email(str(d.get('to'))) and \
       d.get('to_name') and \
-      validate_email(d.get('from')) and \
+      validate_email(str(d.get('from'))) and \
       d.get('from_name') and \
       d.get('body') and \
       d.get('subject'):
@@ -61,12 +61,12 @@ def validate_email(email):
 
     return match
 
-def send_request(d, provider):
+def send_request(d, provider, test=False):
     try:
         headers = {"content-type": "application/x-www-form-urlencoded"}
 
         if provider == 'mailgun':
-            response = retrieve_mailgun_config()
+            response = retrieve_mailgun_config(test)
             if not response:
                 return False
             url, username, password = response
@@ -83,7 +83,7 @@ def send_request(d, provider):
                 headers = headers)
 
         elif provider == 'mandrill':
-            response = retrieve_mandrill_config()
+            response = retrieve_mandrill_config(test)
             if response == False:
                 return False
             url, key = response
@@ -140,20 +140,30 @@ def format_mandrill(d, key):
     except:
         return False
 
-def retrieve_mailgun_config():
+def retrieve_mailgun_config(test):
     try:
         config = ConfigParser.ConfigParser()
-        config.read('config/mailgun_config.ini')
+
+        if test:
+            config.read('config/mailgun_config.ini')
+        else:
+            config.read('../config/mailgun_config.ini')
+
         return [config.get('Mailgun', 'url'),
                 config.get('Mailgun', 'username'),
                 config.get('Mailgun', 'password')]
     except:
         return False
         
-def retrieve_mandrill_config():
+def retrieve_mandrill_config(test):
     try:
         config = ConfigParser.ConfigParser()
-        config.read('config/mandrill_config.ini')
+
+        if test:
+            config.read('config/mandrill_config.ini')
+        else:
+            config.read('../config/mandrill_config.ini')
+
         return [config.get('Mandrill', 'url'),
                 config.get('Mandrill', 'key')]
     except:

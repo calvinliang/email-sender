@@ -15,7 +15,7 @@ class SendRequestTests(unittest.TestCase):
             "body": "<h1>World!</h1>",
             "subject": "Hello"
         }
-        response = email_sender.send_request(data, 'mailgun')
+        response = email_sender.send_request(data, 'mailgun', True)
         self.failUnless(response)
 
     def testSendRequestMailgunBadKey(self):
@@ -27,7 +27,7 @@ class SendRequestTests(unittest.TestCase):
             "body": "<h1>World!</h1>",
             "subject": "Hello"
         }
-        response = email_sender.send_request(data, 'mailgun')
+        response = email_sender.send_request(data, 'mailgun', True)
         self.failIf(response)
 
     def testSendRequestMailgunBadDataRemovedField(self):
@@ -38,7 +38,7 @@ class SendRequestTests(unittest.TestCase):
             "body": "<h1>World!</h1>",
             "subject": "Hello"
         }
-        response = email_sender.send_request(data, 'mailgun')
+        response = email_sender.send_request(data, 'mailgun', True)
         self.failIf(response)
 
     def testSendRequestMandrill(self):
@@ -50,7 +50,7 @@ class SendRequestTests(unittest.TestCase):
             "body": "<h1>World!</h1>",
             "subject": "Hello"
         }
-        response = email_sender.send_request(data, 'mandrill')
+        response = email_sender.send_request(data, 'mandrill', True)
         self.failUnless(response)
 
     def testSendRequestMandrillBadKey(self):
@@ -62,7 +62,7 @@ class SendRequestTests(unittest.TestCase):
             "body": "<h1>World!</h1>",
             "subject": "Hello"
         }
-        response = email_sender.send_request(data, 'mandrill')
+        response = email_sender.send_request(data, 'mandrill', True)
         self.failIf(response)
 
     def testSendRequestMandrillRemovedField(self):
@@ -73,7 +73,7 @@ class SendRequestTests(unittest.TestCase):
             "body": "<h1>World!</h1>",
             "subject": "Hello"
         }
-        response = email_sender.send_request(data, 'mandrill')
+        response = email_sender.send_request(data, 'mandrill', True)
         self.failIf(response)
 
 def main():
