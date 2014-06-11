@@ -1,0 +1,3 @@
+[Mandrill]
+url=https://mandrillapp.com/api/1.0/messages/send.json
+#key=<key here>

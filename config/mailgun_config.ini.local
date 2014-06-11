@@ -1,0 +1,4 @@
+[Mailgun]
+url=https://api.mailgun.net/v2/samples.mailgun.org/messages
+username=api
+#password=<password here>
