@@ -8,9 +8,9 @@ class SendRequestTests(unittest.TestCase):
 
     def testSendRequestMailgun(self):
         data = {
-            "to": "calvinlsliang@gmail.com",
+            "to": "calvinlsliang2@gmail.com",
             "to_name": "Calvin",
-            "from": "calvinlsliang2@gmail.com",
+            "from": "calvinlsliang3@gmail.com",
             "from_name": "Calvin2",
             "body": "<h1>World!</h1>",
             "subject": "Hello"
@@ -20,9 +20,9 @@ class SendRequestTests(unittest.TestCase):
 
     def testSendRequestMailgunBadKey(self):
         data = {
-            "too": "calvinlsliang@gmail.com",
+            "too": "calvinlsliang2@gmail.com",
             "to_name": "Calvin",
-            "from": "calvinlsliang2@gmail.com",
+            "from": "calvinlsliang3@gmail.com",
             "from_name": "Calvin2",
             "body": "<h1>World!</h1>",
             "subject": "Hello"
@@ -32,8 +32,8 @@ class SendRequestTests(unittest.TestCase):
 
     def testSendRequestMailgunBadDataRemovedField(self):
         data = {
-            "too": "calvinlsliang@gmail.com",
-            "from": "calvinlsliang2@gmail.com",
+            "too": "calvinlsliang2@gmail.com",
+            "from": "calvinlsliang3@gmail.com",
             "from_name": "Calvin2",
             "body": "<h1>World!</h1>",
             "subject": "Hello"
@@ -43,9 +43,9 @@ class SendRequestTests(unittest.TestCase):
 
     def testSendRequestMandrill(self):
         data = {
-            "to": "calvinlsliang@gmail.com",
+            "to": "calvinlsliang2@gmail.com",
             "to_name": "Calvin",
-            "from": "calvinlsliang2@gmail.com",
+            "from": "calvinlsliang3@gmail.com",
             "from_name": "Calvin2",
             "body": "<h1>World!</h1>",
             "subject": "Hello"
@@ -55,9 +55,9 @@ class SendRequestTests(unittest.TestCase):
 
     def testSendRequestMandrillBadKey(self):
         data = {
-            "tooo": "calvinlsliang@gmail.com",
+            "tooo": "calvinlsliang2@gmail.com",
             "to_name": "Calvin",
-            "from": "calvinlsliang2@gmail.com",
+            "from": "calvinlsliang3@gmail.com",
             "from_name": "Calvin2",
             "body": "<h1>World!</h1>",
             "subject": "Hello"
